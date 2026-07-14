@@ -1,4 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-{{ page.content }}
+<article class="prose article">
+  <header class="article-header">
+    <p class="kicker">Разбор</p>
+    <h1>{{ page.meta.title }}</h1>
+    {% if page.meta.subtitle %}<p class="subtitle">{{ page.meta.subtitle }}</p>{% endif %}
+  </header>
+  {{ page.content }}
+  <p class="backlink"><a href="/research/">← К исследованию</a></p>
+</article>
 {% endblock %}

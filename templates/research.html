@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-{{ page.content }}
-{% for a in articles %}
-<a href="{{ a.url }}">{{ a.meta.title }}</a>
-{% endfor %}
+<article class="prose">{{ page.content }}</article>
+<section class="cards">
+  <h2 class="kicker">Разборы</h2>
+  {% for a in articles %}
+  <a class="card" href="{{ a.url }}">
+    <h3>{{ a.meta.title }}</h3>
+    {% if a.meta.description %}<p>{{ a.meta.description }}</p>{% endif %}
+  </a>
+  {% endfor %}
+</section>
 {% endblock %}

@@ -1,12 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.meta.title }} — {{ site.name }}</title>
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.meta.title and page.url != '/' %}{{ page.meta.title }} — {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ page.meta.description or site.description }}">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    {% block content %}{% endblock %}
+  <header class="site-header">
+    <a class="site-name" href="/">{{ site.name }}</a>
+    <nav class="site-nav"><a href="/research/"{% if page.url.startswith('/research/') %} class="current"{% endif %}>Исследование</a></nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <p>{{ site.author }} · <a href="{{ site.telegram }}">@xenitch</a></p>
+  </footer>
 </body>
 </html>

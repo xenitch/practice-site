@@ -1,1 +1,52 @@
-/* Placeholder stylesheet for site structure. Task 3 adds full styling. */
+/* Палитра: бумага/чернила/клубные акценты */
+:root {
+  --paper: #f6f1e5; --ink: #2b2118; --green: #1f4a38; --claret: #6e1f2e;
+  --gold: #b08d3f; --muted: #6d6152;
+}
+@font-face { font-family: "Playfair Display"; src: url(/static/fonts/playfair-display-v40-cyrillic_latin-regular.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url(/static/fonts/playfair-display-v40-cyrillic_latin-700.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url(/static/fonts/playfair-display-v40-cyrillic_latin-italic.woff2) format("woff2"); font-style: italic; font-display: swap; }
+@font-face { font-family: "Literata"; src: url(/static/fonts/literata-v40-cyrillic_latin-regular.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Literata"; src: url(/static/fonts/literata-v40-cyrillic_latin-700.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Literata"; src: url(/static/fonts/literata-v40-cyrillic_latin-italic.woff2) format("woff2"); font-style: italic; font-display: swap; }
+
+html { background: var(--paper); color: var(--ink); }
+body {
+  margin: 0 auto; padding: 2.5rem 1.25rem 4rem; max-width: 42rem;
+  font: 400 1.125rem/1.65 "Literata", "PT Serif", Georgia, serif;
+  hyphens: auto; font-feature-settings: "onum" 1;
+}
+h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; line-height: 1.2; font-weight: 700; }
+h1 { font-size: 2.1rem; margin: 0.4em 0; }
+a { color: var(--green); text-decoration-color: color-mix(in srgb, var(--gold) 60%, transparent); text-underline-offset: 3px; }
+a:hover { color: var(--claret); }
+.kicker, .site-nav a, .site-name { font-variant-caps: all-small-caps; letter-spacing: 0.08em; }
+.site-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  border-bottom: 1px solid var(--gold); padding-bottom: 0.75rem; margin-bottom: 2.5rem; }
+.site-name { text-decoration: none; color: var(--ink); font-family: "Playfair Display", serif; }
+.kicker { color: var(--claret); margin: 0; }
+.subtitle { font-style: italic; color: var(--muted); font-size: 1.2rem; }
+.article > p:first-of-type::first-letter, .article .article-header + p::first-letter {
+  font-family: "Playfair Display", serif; font-size: 3.2em; float: left;
+  line-height: 0.85; padding: 0.04em 0.08em 0 0; color: var(--green); }
+blockquote { margin: 1.5em 0; padding-left: 1.25em; border-left: 2px solid var(--gold);
+  font-style: italic; color: var(--muted); }
+hr { border: 0; text-align: center; margin: 2.5em 0; }
+hr::after { content: "❦"; color: var(--gold); font-size: 1.1em; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9em; display: block; overflow-x: auto; }
+th, td { border-top: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  padding: 0.5em 0.75em; text-align: left; vertical-align: top; }
+th { font-variant-caps: all-small-caps; letter-spacing: 0.06em; }
+.mechanisms { counter-reset: mech; list-style: none; padding: 0; }
+.mechanisms li { counter-increment: mech; margin: 1.1em 0; padding-left: 2.4rem; position: relative; }
+.mechanisms li::before { content: counter(mech); position: absolute; left: 0; top: -0.1em;
+  font-family: "Playfair Display", serif; font-size: 1.6em; color: var(--gold); }
+.cards { margin-top: 3rem; }
+.card { display: block; text-decoration: none; color: inherit; padding: 1.25rem 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 50%, transparent); margin: 1rem 0; }
+.card:hover { border-color: var(--claret); }
+.card h3 { margin: 0 0 0.4em; color: var(--green); }
+.card p { margin: 0; color: var(--muted); font-size: 0.95em; }
+.site-footer { margin-top: 4rem; border-top: 1px solid var(--gold); padding-top: 1rem;
+  color: var(--muted); font-size: 0.9em; }
+.backlink { margin-top: 3rem; }
