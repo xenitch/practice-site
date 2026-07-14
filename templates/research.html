@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+{{ page.content }}
+{% for a in articles %}
+<a href="{{ a.url }}">{{ a.meta.title }}</a>
+{% endfor %}
+{% endblock %}
