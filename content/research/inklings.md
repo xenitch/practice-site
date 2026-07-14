@@ -101,3 +101,5 @@ description: "Оксфордский кружок Льюиса и Толкина
 Для того, кто собирает свой кружок практики, урок двоякий: начните как Инклинги — одна встреча, один ритуал, никакой бюрократии; но помните, чего в этой формуле нет. Нет способа остановить своего Дайсона. Нет второго Льюиса на замену. И нет ничего, что заставит вас закончить книгу, — только то, что заставит её продолжать.
 
 ---
+
+*Ключевые источники: Warren Lewis, «Brothers and Friends»; Diana Pavlac Glyer, «The Company They Keep» (2007) и «Why Did the Inklings Stop Meeting?»; The Letters of J.R.R. Tolkien (№ 276 и письма 1944 года); C.S. Lewis, предисловие к «Essays Presented to Charles Williams» (1947); Britannica, «Inklings».*
