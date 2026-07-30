@@ -41,7 +41,8 @@ def build(root: Path) -> None:
     content_dir, out = root / "content", root / "docs"
     env = Environment(loader=FileSystemLoader(root / "templates"), autoescape=False)
     pages = [load_page(p, content_dir) for p in sorted(content_dir.rglob("*.md"))]
-    articles = sorted((p for p in pages if p["is_article"]),
+    # Карточка «Разборы» — только у статей (у них есть date); служебные страницы раздела без date в список не попадают
+    articles = sorted((p for p in pages if p["is_article"] and p["meta"].get("date")),
                       key=lambda p: str(p["meta"].get("date", "")), reverse=True)
     if out.exists():
         shutil.rmtree(out)

@@ -75,6 +75,15 @@ def test_build_research_lists_articles_new_first(tmp_path):
     assert html.index("Новая") < html.index("Старая")
     assert "/research/new/" in html
 
+def test_build_dateless_research_page_not_listed_as_article(tmp_path):
+    root = make_site(tmp_path)
+    (root / "content" / "research" / "section.md").write_text(
+        "---\ntitle: Служебная\ntemplate: page.html\n---\nТекст раздела.", encoding="utf-8")
+    build(root)
+    html = (root / "docs" / "research" / "index.html").read_text(encoding="utf-8")
+    assert "/research/section/" not in html
+    assert (root / "docs" / "research" / "section" / "index.html").exists()
+
 def test_build_is_idempotent_and_cleans(tmp_path):
     root = make_site(tmp_path)
     build(root)
