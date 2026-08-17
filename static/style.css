@@ -31,6 +31,8 @@ a:hover { color: var(--claret); }
   line-height: 0.85; padding: 0.04em 0.08em 0 0; color: var(--green); }
 blockquote { margin: 1.5em 0; padding-left: 1.25em; border-left: 2px solid var(--gold);
   font-style: italic; color: var(--muted); }
+img { max-width: 100%; height: auto; display: block; margin: 2rem auto;
+  mix-blend-mode: multiply; }
 hr { border: 0; text-align: center; margin: 2.5em 0; }
 hr::after { content: "❦"; color: var(--gold); font-size: 1.1em; }
 table { border-collapse: collapse; width: 100%; font-size: 0.9em; display: block; overflow-x: auto; }
