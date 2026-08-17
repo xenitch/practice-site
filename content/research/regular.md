@@ -68,3 +68,24 @@ template: page.html
 Что же такое «хорошо спроектированная группа»? О, это уже совсем другая история, то есть новое исследование. А пока исследование в пути — не сходить ли нам сегодня к какой-нибудь реке? :)
 
 ![Трое сидят с удочками на берегу реки и разговаривают; последний заборчик остался лежать поодаль](/static/images/fishing-together.jpg)
+
+***
+
+Что ж, если вы всё ещё здесь, вот дополнительное чтение:
+
+1. Про то, как высокостимульный контент перекалибровывает дофаминовую систему и почему на его фоне обычные занятия ощущаются тусклыми — [Anna Lembke, «Dopamine Nation: Finding Balance in the Age of Indulgence» (2021)](https://www.penguinrandomhouse.com/books/624957/dopamine-nation-by-anna-lembke-md/)
+2. Про то, что запуск поведения держится на контекстных триггерах, а не на силе решения «начать» — [Wendy Wood & David Neal, «A new look at habits and the habit–goal interface», Psychological Review (2007)](https://dornsife.usc.edu/wendy-wood/wp-content/uploads/sites/183/2023/10/wood.neal_.2007psychrev_a_new_look_at_habits_and_the_interface_between_habits_and_goals.pdf)
+3. Про то, как заранее принятый план «если — то» закрывает разрыв между намерением и действием (метаанализ 94 исследований) — [Peter Gollwitzer & Paschal Sheeran, «Implementation intentions and goal achievement» (2006)](https://kops.uni-konstanz.de/handle/123456789/10973)
+4. Про оптимум сложности, оцифрованный экспериментально как ~85% успеха — [Robert Wilson, Amitai Shenhav, Marc Straccia & Jonathan Cohen, «The Eighty Five Percent Rule for optimal learning», Nature Communications (2019)](https://www.nature.com/articles/s41467-019-12552-4)
+5. Про зону ближайшего развития — [Лев Выготский, «Mind in Society» (Harvard University Press)](https://www.hup.harvard.edu/books/9780674076686)
+6. Про рабочий канал между скукой и тревогой — [Михай Чиксентмихайи, «Flow: The Psychology of Optimal Experience»](https://www.harpercollins.com/products/flow-mihaly-csikszentmihalyi)
+7. Про то, как среда убивает перенос навыков даже после хорошего обучения — [Michael Beer, Magnus Finnström & Derek Schrader, «Why Leadership Training Fails — and What to Do About It», Harvard Business Review (2016)](https://hbr.org/2016/10/why-leadership-training-fails-and-what-to-do-about-it)
+8. Про то, что группа работает, пока практикует вместе, и ломается при переключении на взаимный контроль — [Ian Clark & Guillaume Dumas, «Toward a neural basis for peer-interaction», Frontiers in Psychology (2015)](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.00028/full)
+9. Про то, что социальное присутствие переключает практикующего на внутренний мониторинг качества (ЭЭГ-данные) — [«Neurocomputational mechanisms of social presence effects on instrumental learning», Communications Biology (2025)](https://www.nature.com/articles/s42003-025-09043-2)
+10. Про то, что фиксация прогресса измеримо повышает достижение целей, особенно физическая запись и публичность (метаанализ 138 экспериментов) — [Benjamin Harkin et al., «Does monitoring goal progress promote goal attainment?», Psychological Bulletin (2016)](https://eprints.whiterose.ac.uk/id/eprint/87431/)
+11. Про то, что смена интерпретации трудности («это рост, а не моя неспособность») удерживает людей в практике — [Gregory Walton & Timothy Wilson, «Wise Interventions: Psychological remedies for social and personal problems», Psychological Review (2018)](https://studentexperiencenetwork.org/research_library/3162/)
+12. Про то, что маленький ежедневный прогресс — самый сильный из измеренных мотиваторов (12 000 рабочих дневников) — [Teresa Amabile & Steven Kramer, «The Power of Small Wins», Harvard Business Review (2011)](https://hbr.org/2011/05/the-power-of-small-wins)
+13. Про психологическую безопасность и то, что без неё группа перестаёт учиться, — исходное исследование понятия: [Amy Edmondson, «Psychological Safety and Learning Behavior in Work Teams», Administrative Science Quarterly (1999)](https://journals.sagepub.com/doi/10.2307/2666999)
+14. Про автономию как базовую потребность, без которой мотивация разрушается — [Richard Ryan & Edward Deci, обзор Self-Determination Theory](https://selfdeterminationtheory.org/theory/)
+15. Про то, что наблюдение за другим практикующим включает дофаминовую систему и ускоряет обучение — [Nihaad Paraouty, Catherine Rizzuto & Dan Sanes, «Dopaminergic signaling supports auditory social learning», Scientific Reports (2021)](https://www.nature.com/articles/s41598-021-92524-1)
+16. Про то, что привычка строится повторением в стабильном отдельном контексте (~66 дней до автоматизма) — [Benjamin Gardner, Phillippa Lally & Jane Wardle, «Making health habitual», British Journal of General Practice (2012)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3505409/)
