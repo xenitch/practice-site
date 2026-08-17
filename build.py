@@ -8,7 +8,7 @@ import markdown
 from jinja2 import Environment, FileSystemLoader
 
 SITE = {
-    "name": "Сообщества совместной практики",
+    "name": "Practice makes perfect",
     "domain": "xenitch.ru",
     "author": "Ксения Костюченко",
     "telegram": "https://t.me/xenitch",
