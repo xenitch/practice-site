@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Органический книжный клуб — Practice makes perfect</title>
+  <meta name="description" content="Обсуждаем книгу «Займись ничем» Джозефа Джебелли. 28 сентября в Кемерове, 29 сентября в Zoom.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="/">Practice makes perfect</a>
+    <nav class="site-nav"><a href="/bookclub/" class="current">Книжный клуб</a> · <a href="/research/">Исследование</a></nav>
+  </header>
+  <main>
+<article class="prose article">
+  <header class="article-header">
+    <p class="kicker">Органический книжный клуб</p>
+    <h1>Ничегонеделание делает нас живыми</h1>
+  </header>
+  <p>Обсуждаем книгу «Займись ничем» Джозефа Джебелли и связанные с ней произведения.</p>
+<dl class="events">
+<dt>28 сентября, 17:30 (кем)</dt>
+<dd>оффлайн, Кемерово</dd>
+<dt>29 сентября, 13:30 (мск)</dt>
+<dd>онлайн, Zoom</dd>
+</dl>
+
+<p>Стоимость: 500 р.</p>
+</article>
+<section class="reg">
+  <h2 class="kicker">Регистрация</h2>
+  <form class="reg-form" id="reg-form" method="post" action="">
+    <label>Имя <input type="text" name="name" required autocomplete="name"></label>
+    <label>Номер телефона <input type="tel" name="phone" required autocomplete="tel"></label>
+    <label>Эл. почта <input type="email" name="email" required autocomplete="email"></label>
+    <fieldset>
+      <legend>Формат участия</legend>
+      <label class="radio"><input type="radio" name="format" value="Оффлайн, Кемерово, 28 сентября" required> Оффлайн, Кемерово, 28 сентября</label>
+      <label class="radio"><input type="radio" name="format" value="Онлайн, Zoom, 29 сентября" required> Онлайн, Zoom, 29 сентября</label>
+    </fieldset>
+    <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    <button type="submit">Зарегистрироваться</button>
+    <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="https://t.me/xenitch">@xenitch</a> или <a href="https://yookassa.ru/my/i/aqE8U3v4u5ve/l">перейдите к оплате</a>.</p>
+  </form>
+</section>
+<script>
+(function () {
+  var form = document.getElementById('reg-form');
+  var error = document.getElementById('reg-error');
+  var payUrl = "https://yookassa.ru/my/i/aqE8U3v4u5ve/l";
+  var formUrl = "";
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var button = form.querySelector('button');
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+    error.hidden = true;
+    button.disabled = true;
+    button.textContent = 'Отправляем…';
+    if (!formUrl) { location.href = payUrl; return; }
+    fetch(formUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(data) })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.error || 'error');
+        location.href = payUrl;
+      })
+      .catch(function () {
+        error.hidden = false;
+        button.disabled = false;
+        button.textContent = 'Зарегистрироваться';
+      });
+  });
+})();
+</script>
+</main>
+  <footer class="site-footer">
+    <p>Ксения Костюченко · <a href="https://t.me/xenitch">@xenitch</a></p>
+  </footer>
+</body>
+</html>

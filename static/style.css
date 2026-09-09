@@ -54,3 +54,26 @@ th { font-variant-caps: all-small-caps; letter-spacing: 0.06em; }
 .site-footer { margin-top: 4rem; border-top: 1px solid var(--gold); padding-top: 1rem;
   color: var(--muted); font-size: 0.9em; }
 .backlink { margin-top: 3rem; }
+
+/* Регистрация (книжный клуб) */
+.events { margin: 1.5em 0; }
+.events dt { font-family: "Playfair Display", serif; font-weight: 700; margin-top: 0.8em; }
+.events dd { margin: 0; color: var(--muted); }
+.reg { margin-top: 3rem; border-top: 1px solid var(--gold); padding-top: 1.5rem; }
+.reg-form label { display: block; margin: 1.1em 0; font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); }
+.reg-form input[type="text"], .reg-form input[type="tel"], .reg-form input[type="email"] {
+  display: block; width: 100%; box-sizing: border-box; margin-top: 0.25em; padding: 0.45em 0;
+  font: inherit; font-variant-caps: normal; letter-spacing: 0; color: var(--ink);
+  background: transparent; border: 0; border-bottom: 1px solid var(--gold); border-radius: 0; }
+.reg-form input:focus { outline: none; border-bottom-color: var(--green); }
+.reg-form fieldset { border: 0; padding: 0; margin: 1.5em 0; }
+.reg-form legend { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); padding: 0; }
+.reg-form .radio { font-variant-caps: normal; letter-spacing: 0; color: var(--ink); margin: 0.5em 0; }
+.reg-form .radio input { accent-color: var(--green); margin-right: 0.5em; }
+.reg-form .trap { position: absolute; left: -9999px; }
+.reg-form button { font: inherit; font-family: "Playfair Display", serif; font-weight: 700;
+  color: var(--paper); background: var(--green); border: 0; border-radius: 0;
+  padding: 0.7em 1.6em; cursor: pointer; margin-top: 0.5em; }
+.reg-form button:hover { background: var(--claret); }
+.reg-form button:disabled { background: var(--muted); cursor: default; }
+.form-error { color: var(--claret); }

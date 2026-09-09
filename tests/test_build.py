@@ -90,3 +90,19 @@ def test_build_is_idempotent_and_cleans(tmp_path):
     (root / "docs" / "stale.html").write_text("x", encoding="utf-8")
     build(root)
     assert not (root / "docs" / "stale.html").exists()
+
+
+def test_bookclub_page_has_form():
+    root = Path(__file__).parent.parent
+    build(root)
+    html = (root / "docs" / "bookclub" / "index.html").read_text(encoding="utf-8")
+    assert "<form" in html and 'name="email"' in html
+    assert "yookassa.ru" in html
+    assert "Ничегонеделание делает нас живыми" in html
+
+
+def test_nav_and_home_link_to_bookclub():
+    root = Path(__file__).parent.parent
+    build(root)
+    home = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    assert home.count('href="/bookclub/"') >= 2  # шапка + абзац
