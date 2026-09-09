@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <article class="prose article">
+  {% if page.meta.cover %}<img class="cover" src="{{ page.meta.cover | e }}" alt="{{ page.meta.cover_alt | e }}">{% endif %}
   <header class="article-header">
     <p class="kicker">Органический книжный клуб</p>
     <h1>Ничегонеделание делает нас живыми</h1>
@@ -19,7 +20,8 @@
       <label class="radio"><input type="radio" name="format" value="Онлайн, Zoom, 29 сентября" required> Онлайн, Zoom, 29 сентября</label>
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-    <button type="submit">Зарегистрироваться</button>
+    <p class="price">{{ page.meta.price | e }}</p>
+    <button type="submit">Перейти к оплате</button>
     <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a> или <a href="{{ page.meta.pay_url | e }}">перейдите к оплате</a>.</p>
   </form>
 </section>
@@ -47,7 +49,7 @@
       .catch(function () {
         error.hidden = false;
         button.disabled = false;
-        button.textContent = 'Зарегистрироваться';
+        button.textContent = 'Перейти к оплате';
       });
   });
 })();

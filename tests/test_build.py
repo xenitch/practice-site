@@ -99,6 +99,8 @@ def test_bookclub_page_has_form():
     assert "<form" in html and 'name="email"' in html
     assert "yookassa.ru" in html
     assert "Ничегонеделание делает нас живыми" in html
+    assert "Перейти к оплате" in html and "bookclub-cover.jpg" in html
+    assert html.index("Стоимость") < html.index("<button")
 
 
 def test_nav_and_home_link_to_bookclub():

@@ -14,6 +14,7 @@
   </header>
   <main>
 <article class="prose article">
+  <img class="cover" src="/static/images/bookclub-cover.jpg" alt="Книга «Займись ничем» Джозефа Джебелли лежит в летней траве">
   <header class="article-header">
     <p class="kicker">Органический книжный клуб</p>
     <h1>Ничегонеделание делает нас живыми</h1>
@@ -25,8 +26,6 @@
 <dt>29 сентября, 13:30 (мск)</dt>
 <dd>онлайн, Zoom</dd>
 </dl>
-
-<p>Стоимость: 500 р.</p>
 </article>
 <section class="reg">
   <h2 class="kicker">Регистрация</h2>
@@ -40,7 +39,8 @@
       <label class="radio"><input type="radio" name="format" value="Онлайн, Zoom, 29 сентября" required> Онлайн, Zoom, 29 сентября</label>
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-    <button type="submit">Зарегистрироваться</button>
+    <p class="price">Стоимость: 500 р.</p>
+    <button type="submit">Перейти к оплате</button>
     <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="https://t.me/xenitch">@xenitch</a> или <a href="https://yookassa.ru/my/i/aqE8U3v4u5ve/l">перейдите к оплате</a>.</p>
   </form>
 </section>
@@ -68,7 +68,7 @@
       .catch(function () {
         error.hidden = false;
         button.disabled = false;
-        button.textContent = 'Зарегистрироваться';
+        button.textContent = 'Перейти к оплате';
       });
   });
 })();
