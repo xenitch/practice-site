@@ -30,7 +30,7 @@
 </article>
 <section class="reg">
   <h2 class="kicker">Регистрация</h2>
-  <form class="reg-form" id="reg-form" method="post" action="">
+  <form class="reg-form" id="reg-form" method="post" action="https://script.google.com/macros/s/AKfycbwXq_ukv-QvUrzFUl081FnmP_xHNjaaXlYhNx0OCV0xKk59J7qZoyDiBntOjMgEU6fF/exec">
     <label>Имя <input type="text" name="name" required autocomplete="name"></label>
     <label>Номер телефона <input type="tel" name="phone" required autocomplete="tel"></label>
     <label>Эл. почта <input type="email" name="email" required autocomplete="email"></label>
@@ -49,7 +49,7 @@
   var form = document.getElementById('reg-form');
   var error = document.getElementById('reg-error');
   var payUrl = "https://yookassa.ru/my/i/aqE8U3v4u5ve/l";
-  var formUrl = "";
+  var formUrl = "https://script.google.com/macros/s/AKfycbwXq_ukv-QvUrzFUl081FnmP_xHNjaaXlYhNx0OCV0xKk59J7qZoyDiBntOjMgEU6fF/exec";
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var button = form.querySelector('button');
