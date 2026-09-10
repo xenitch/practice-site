@@ -101,6 +101,9 @@ def test_bookclub_page_has_form():
     assert "Ничегонеделание делает нас живыми" in html
     assert "Перейти к оплате" in html and "bookclub-cover.jpg" in html
     assert html.index("Стоимость") < html.index("<button")
+    assert 'name="consent"' in html and 'href="/consent/"' in html
+    consent = (root / "docs" / "consent" / "index.html").read_text(encoding="utf-8")
+    assert "152-ФЗ" in consent
 
 
 def test_nav_and_home_link_to_bookclub():

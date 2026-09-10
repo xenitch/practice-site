@@ -72,6 +72,8 @@ th { font-variant-caps: all-small-caps; letter-spacing: 0.06em; }
 .reg-form legend { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); padding: 0; }
 .reg-form .radio { font-variant-caps: normal; letter-spacing: 0; color: var(--ink); margin: 0.5em 0; }
 .reg-form .radio input { accent-color: var(--green); margin-right: 0.5em; }
+.reg-form .check { font-variant-caps: normal; letter-spacing: 0; color: var(--ink); margin: 1.5em 0 0; }
+.reg-form .check input { accent-color: var(--green); margin-right: 0.5em; }
 .reg-form .trap { position: absolute; left: -9999px; }
 .reg-form button { font: inherit; font-family: "Playfair Display", serif; font-weight: 700;
   color: var(--paper); background: var(--green); border: 0; border-radius: 0;

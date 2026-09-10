@@ -20,6 +20,7 @@
       <label class="radio"><input type="radio" name="format" value="Онлайн, Zoom, 29 сентября" required> Онлайн, Zoom, 29 сентября</label>
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    <label class="check"><input type="checkbox" name="consent" required> Даю <a href="/consent/">согласие на обработку персональных данных</a></label>
     <p class="price">{{ page.meta.price | e }}</p>
     <button type="submit">Перейти к оплате</button>
     <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a> или <a href="{{ page.meta.pay_url | e }}">перейдите к оплате</a>.</p>
