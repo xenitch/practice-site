@@ -97,11 +97,12 @@ def test_bookclub_page_has_form():
     build(root)
     html = (root / "docs" / "bookclub" / "index.html").read_text(encoding="utf-8")
     assert "<form" in html and 'name="email"' in html
-    assert "yookassa.ru" in html
-    assert "Ничегонеделание делает нас живыми" in html
+    assert "Ничегонеделание для занятых организмов" in html
+    assert html.count('type="radio" name="tariff"') == 3 and html.count("yookassa.ru/my/i/") >= 4
     assert "Перейти к оплате" in html and "bookclub-cover.jpg" in html
-    assert html.index("Стоимость") < html.index("<button")
     assert 'name="consent"' in html and 'href="/consent/"' in html
+    assert html.index('name="consent"') < html.index("<button")
+    assert "Zoom" not in html and 'name="format"' not in html
     consent = (root / "docs" / "consent" / "index.html").read_text(encoding="utf-8")
     assert "152-ФЗ" in consent
 

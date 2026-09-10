@@ -4,7 +4,7 @@
   {% if page.meta.cover %}<img class="cover" src="{{ page.meta.cover | e }}" alt="{{ page.meta.cover_alt | e }}">{% endif %}
   <header class="article-header">
     <p class="kicker">Органический книжный клуб</p>
-    <h1>Ничегонеделание делает нас живыми</h1>
+    <h1>Ничегонеделание для занятых организмов</h1>
   </header>
   {{ page.content }}
 </article>
@@ -15,26 +15,29 @@
     <label>Номер телефона <input type="tel" name="phone" required autocomplete="tel"></label>
     <label>Эл. почта <input type="email" name="email" required autocomplete="email"></label>
     <fieldset>
-      <legend>Формат участия</legend>
-      <label class="radio"><input type="radio" name="format" value="Оффлайн, Кемерово, 28 сентября" required> Оффлайн, Кемерово, 28 сентября</label>
-      <label class="radio"><input type="radio" name="format" value="Онлайн, Zoom, 29 сентября" required> Онлайн, Zoom, 29 сентября</label>
+      <legend>Тариф</legend>
+      {% for t in page.meta.tariffs %}
+      <label class="radio"><input type="radio" name="tariff" value="{{ t.name | e }}" data-pay="{{ t.url | e }}" required> {{ t.name | e }}</label>
+      {% endfor %}
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     <label class="check"><input type="checkbox" name="consent" required> Даю <a href="/consent/">согласие на обработку персональных данных</a></label>
-    <p class="price">{{ page.meta.price | e }}</p>
     <button type="submit">Перейти к оплате</button>
-    <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a> или <a href="{{ page.meta.pay_url | e }}">перейдите к оплате</a>.</p>
+    <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a> или <a id="reg-pay-link" href="{{ page.meta.tariffs[0].url | e }}">перейдите к оплате</a>.</p>
   </form>
 </section>
 <script>
 (function () {
   var form = document.getElementById('reg-form');
   var error = document.getElementById('reg-error');
-  var payUrl = {{ page.meta.pay_url | tojson }};
+  var payLink = document.getElementById('reg-pay-link');
   var formUrl = {{ page.meta.form_url | tojson }};
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var button = form.querySelector('button');
+    var chosen = form.querySelector('input[name="tariff"]:checked');
+    var payUrl = chosen ? chosen.getAttribute('data-pay') : payLink.href;
+    payLink.href = payUrl;
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     error.hidden = true;
