@@ -21,7 +21,7 @@
       {% endfor %}
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-    <label class="check"><input type="checkbox" name="consent" required> Даю <a href="/consent/">согласие на обработку персональных данных</a></label>
+    <label class="check"><input type="checkbox" name="consent" required> Кстати, даю <a href="/consent/">согласие на обработку персональных данных</a></label>
     <button type="submit">Перейти к оплате</button>
     <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a> или <a id="reg-pay-link" href="{{ page.meta.tariffs[0].url | e }}">перейдите к оплате</a>.</p>
   </form>
