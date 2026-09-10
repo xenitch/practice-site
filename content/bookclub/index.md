@@ -11,7 +11,7 @@ tariffs:
     url: https://yookassa.ru/my/i/aqItA3nvi3zq/l
   - name: Обсуждение + книга-сюрприз из специальной подборки — 2000 р.
     url: https://yookassa.ru/my/i/aqItNj8fBzUO/l
-form_url: https://script.google.com/macros/s/AKfycbwXq_ukv-QvUrzFUl081FnmP_xHNjaaXlYhNx0OCV0xKk59J7qZoyDiBntOjMgEU6fF/exec
+form_url: https://script.google.com/macros/s/AKfycbyJfEycIBCWvzOgOkeJ3n3C3w46v8cpOy-fE_Tz8NeHrBPEZBomnO0JM7IOFfBlCnMz/exec
 ---
 Обсуждаем книгу «Займись ничем» Джозефа Джебелли и составляем подборку книг для ничегонеделания.
 

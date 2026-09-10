@@ -27,7 +27,7 @@
 </article>
 <section class="reg">
   <h2 class="kicker">Регистрация</h2>
-  <form class="reg-form" id="reg-form" method="post" action="https://script.google.com/macros/s/AKfycbwXq_ukv-QvUrzFUl081FnmP_xHNjaaXlYhNx0OCV0xKk59J7qZoyDiBntOjMgEU6fF/exec">
+  <form class="reg-form" id="reg-form" method="post" action="https://script.google.com/macros/s/AKfycbyJfEycIBCWvzOgOkeJ3n3C3w46v8cpOy-fE_Tz8NeHrBPEZBomnO0JM7IOFfBlCnMz/exec">
     <label>Имя <input type="text" name="name" required autocomplete="name"></label>
     <label>Номер телефона <input type="tel" name="phone" required autocomplete="tel"></label>
     <label>Эл. почта <input type="email" name="email" required autocomplete="email"></label>
@@ -52,7 +52,7 @@
   var form = document.getElementById('reg-form');
   var error = document.getElementById('reg-error');
   var payLink = document.getElementById('reg-pay-link');
-  var formUrl = "https://script.google.com/macros/s/AKfycbwXq_ukv-QvUrzFUl081FnmP_xHNjaaXlYhNx0OCV0xKk59J7qZoyDiBntOjMgEU6fF/exec";
+  var formUrl = "https://script.google.com/macros/s/AKfycbyJfEycIBCWvzOgOkeJ3n3C3w46v8cpOy-fE_Tz8NeHrBPEZBomnO0JM7IOFfBlCnMz/exec";
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var button = form.querySelector('button');
