@@ -22,38 +22,48 @@
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     <label class="check"><input type="checkbox" name="consent" required> Кстати, даю <a href="/consent/">согласие на обработку персональных данных</a></label>
-    <button type="submit">Перейти к оплате</button>
-    <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a> или <a id="reg-pay-link" href="{{ page.meta.tariffs[0].url | e }}">перейдите к оплате</a>.</p>
+    <button type="submit">{% if page.meta.payment_paused %}Зарегистрироваться{% else %}Перейти к оплате{% endif %}</button>
+    <p class="form-done" id="reg-done" hidden>Спасибо за регистрацию, пришлём вам ссылку на оплату по почте.</p>
+    <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a>{% if not page.meta.payment_paused %} или <a id="reg-pay-link" href="{{ page.meta.tariffs[0].url | e }}">перейдите к оплате</a>{% endif %}.</p>
   </form>
 </section>
 <script>
 (function () {
   var form = document.getElementById('reg-form');
   var error = document.getElementById('reg-error');
+  var done = document.getElementById('reg-done');
   var payLink = document.getElementById('reg-pay-link');
+  var paused = {{ (page.meta.payment_paused or false) | tojson }};
   var formUrl = {{ page.meta.form_url | tojson }};
+  var buttonText = paused ? 'Зарегистрироваться' : 'Перейти к оплате';
+  function finish(payUrl) {
+    if (!paused) { location.href = payUrl; return; }
+    form.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
+    form.querySelector('button').hidden = true;
+    done.hidden = false;
+  }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var button = form.querySelector('button');
     var chosen = form.querySelector('input[name="tariff"]:checked');
-    var payUrl = chosen ? chosen.getAttribute('data-pay') : payLink.href;
-    payLink.href = payUrl;
+    var payUrl = chosen ? chosen.getAttribute('data-pay') : '';
+    if (payLink) payLink.href = payUrl;
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     error.hidden = true;
     button.disabled = true;
     button.textContent = 'Отправляем…';
-    if (!formUrl) { location.href = payUrl; return; }
+    if (!formUrl) { finish(payUrl); return; }
     fetch(formUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(data) })
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (!res.ok) throw new Error(res.error || 'error');
-        location.href = payUrl;
+        finish(payUrl);
       })
       .catch(function () {
         error.hidden = false;
         button.disabled = false;
-        button.textContent = 'Перейти к оплате';
+        button.textContent = buttonText;
       });
   });
 })();

@@ -80,3 +80,4 @@ th { font-variant-caps: all-small-caps; letter-spacing: 0.06em; }
 .reg-form button:hover { background: var(--claret); }
 .reg-form button:disabled { background: var(--muted); cursor: default; }
 .form-error { color: var(--claret); }
+.form-done { color: var(--green); font-family: "Playfair Display", serif; font-size: 1.15rem; }
