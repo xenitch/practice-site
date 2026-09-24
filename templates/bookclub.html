@@ -17,7 +17,7 @@
     <fieldset>
       <legend>Тариф</legend>
       {% for t in page.meta.tariffs %}
-      <label class="radio"><input type="radio" name="tariff" value="{{ t.name | e }}" data-pay="{{ t.url | e }}" required> {{ t.name | e }}</label>
+      <label class="radio"><input type="radio" name="tariff" value="{{ t.name | e }}" data-pay="{{ t.url | e }}" required> {{ (t.label or t.name) | e }}</label>
       {% endfor %}
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>

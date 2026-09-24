@@ -100,6 +100,8 @@ def test_bookclub_page_has_form():
     assert "Ничегонеделание для занятых организмов" in html
     assert html.count('type="radio" name="tariff"') == 2 and "2000" not in html
     assert "18:30–20:30" in html and "Осенний, 1" in html
+    assert 'value="Адекватный — 1000 р."' in html and "> Приятный — 1000 р.<" in html
+    assert "> Адекватный" not in html  # старое название только в value
     assert "bookclub-cover.jpg" in html
     assert "Зарегистрироваться</button>" in html  # оплата на паузе
     assert 'var thanksUrl = "/bookclub/thanks/"' in html

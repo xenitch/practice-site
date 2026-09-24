@@ -7,7 +7,8 @@ cover_alt: Книга «Займись ничем» Джозефа Джебел�
 tariffs:
   - name: Символический — 500 р.
     url: https://yookassa.ru/my/i/aqIs8HTZv_dl/l
-  - name: Адекватный — 1000 р.
+  - name: Адекватный — 1000 р.   # так пишется в таблицу и проверяется скриптом
+    label: Приятный — 1000 р.     # так видит человек на странице
     url: https://yookassa.ru/my/i/aqItA3nvi3zq/l
 # Пауза оплаты: true — после регистрации уводим на страницу /bookclub/thanks/ вместо ЮKassa
 payment_paused: true
