@@ -13,7 +13,7 @@ tariffs:
 # Пауза оплаты: true — после регистрации уводим на страницу /bookclub/thanks/ вместо ЮKassa
 payment_paused: true
 thanks_url: /bookclub/thanks/
-form_url: https://script.google.com/macros/s/AKfycbyJfEycIBCWvzOgOkeJ3n3C3w46v8cpOy-fE_Tz8NeHrBPEZBomnO0JM7IOFfBlCnMz/exec
+form_url: https://script.google.com/macros/s/AKfycbzlI-sE7Hq37kNaVRzIgV8mCmC0dSH15ROUOjbBTMXATeCqUoSUOmJKzT5g4mnW8hNl/exec
 ---
 Обсуждаем книгу «Займись ничем» Джозефа Джебелли и составляем подборку книг для ничегонеделания.
 
