@@ -96,7 +96,7 @@ def test_bookclub_page_has_form():
     root = Path(__file__).parent.parent
     build(root)
     html = (root / "docs" / "bookclub" / "index.html").read_text(encoding="utf-8")
-    assert "<form" in html and 'name="email"' in html
+    assert "<form" in html and 'name="email"' in html and 'name="telegram"' in html
     assert "Ничегонеделание для занятых организмов" in html
     assert html.count('type="radio" name="tariff"') == 2 and "2000" not in html
     assert "18:30–20:30" in html and "Осенний, 1" in html
