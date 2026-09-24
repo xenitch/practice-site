@@ -80,4 +80,6 @@ th { font-variant-caps: all-small-caps; letter-spacing: 0.06em; }
 .reg-form button:hover { background: var(--claret); }
 .reg-form button:disabled { background: var(--muted); cursor: default; }
 .form-error { color: var(--claret); }
-.form-done { color: var(--green); font-family: "Playfair Display", serif; font-size: 1.15rem; }
+.check-mark { display: inline-block; width: 1.6em; height: 1.6em; line-height: 1.6em; text-align: center; font-size: 2rem;
+  color: var(--paper); background: var(--green); border-radius: 50%; margin: 0 0 1rem; }
+.thanks > p { font-size: 1.2rem; }

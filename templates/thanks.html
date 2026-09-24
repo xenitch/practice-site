@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="prose thanks">
+  <p class="check-mark" aria-hidden="true">✓</p>
+  <header class="article-header">
+    <p class="kicker">Органический книжный клуб</p>
+    <h1>{{ page.meta.title | e }}</h1>
+  </header>
+  {{ page.content }}
+</article>
+{% endblock %}

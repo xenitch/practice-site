@@ -21,8 +21,8 @@
   </header>
   <p>Обсуждаем книгу «Займись ничем» Джозефа Джебелли и составляем подборку книг для ничегонеделания.</p>
 <dl class="events">
-<dt>28 сентября, 17:30 (кем)</dt>
-<dd>оффлайн, Кемерово, место уточняется</dd>
+<dt>28 сентября, 18:30–20:30 (кем)</dt>
+<dd>оффлайн, Кемерово, Лесная Поляна, б-р Осенний, 1</dd>
 </dl>
 
 <p>Можно прийти, прочитав книгу не полностью и даже не открыв ни разу. Всё будет органично и уместно :)</p>
@@ -40,13 +40,10 @@
       
       <label class="radio"><input type="radio" name="tariff" value="Адекватный — 1000 р." data-pay="https://yookassa.ru/my/i/aqItA3nvi3zq/l" required> Адекватный — 1000 р.</label>
       
-      <label class="radio"><input type="radio" name="tariff" value="Обсуждение + книга-сюрприз из специальной подборки — 2000 р." data-pay="https://yookassa.ru/my/i/aqItNj8fBzUO/l" required> Обсуждение + книга-сюрприз из специальной подборки — 2000 р.</label>
-      
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     <label class="check"><input type="checkbox" name="consent" required> Кстати, даю <a href="/consent/">согласие на обработку персональных данных</a></label>
     <button type="submit">Зарегистрироваться</button>
-    <p class="form-done" id="reg-done" hidden>Спасибо за регистрацию, пришлём вам ссылку на оплату по почте.</p>
     <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="https://t.me/xenitch">@xenitch</a>.</p>
   </form>
 </section>
@@ -54,16 +51,13 @@
 (function () {
   var form = document.getElementById('reg-form');
   var error = document.getElementById('reg-error');
-  var done = document.getElementById('reg-done');
   var payLink = document.getElementById('reg-pay-link');
   var paused = true;
+  var thanksUrl = "/bookclub/thanks/";
   var formUrl = "https://script.google.com/macros/s/AKfycbyJfEycIBCWvzOgOkeJ3n3C3w46v8cpOy-fE_Tz8NeHrBPEZBomnO0JM7IOFfBlCnMz/exec";
   var buttonText = paused ? 'Зарегистрироваться' : 'Перейти к оплате';
   function finish(payUrl) {
-    if (!paused) { location.href = payUrl; return; }
-    form.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
-    form.querySelector('button').hidden = true;
-    done.hidden = false;
+    location.href = paused ? thanksUrl : payUrl;
   }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();

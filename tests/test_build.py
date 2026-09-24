@@ -98,10 +98,13 @@ def test_bookclub_page_has_form():
     html = (root / "docs" / "bookclub" / "index.html").read_text(encoding="utf-8")
     assert "<form" in html and 'name="email"' in html
     assert "Ничегонеделание для занятых организмов" in html
-    assert html.count('type="radio" name="tariff"') == 3 and html.count("yookassa.ru/my/i/") >= 3
+    assert html.count('type="radio" name="tariff"') == 2 and "2000" not in html
+    assert "18:30–20:30" in html and "Осенний, 1" in html
     assert "bookclub-cover.jpg" in html
     assert "Зарегистрироваться</button>" in html  # оплата на паузе
-    assert "пришлём вам ссылку на оплату по почте" in html
+    assert 'var thanksUrl = "/bookclub/thanks/"' in html
+    thanks = (root / "docs" / "bookclub" / "thanks" / "index.html").read_text(encoding="utf-8")
+    assert "организатор пришлёт в телеграм" in thanks and "check-mark" in thanks
     assert 'name="consent"' in html and 'href="/consent/"' in html
     assert html.index('name="consent"') < html.index("<button")
     assert "Zoom" not in html and 'name="format"' not in html

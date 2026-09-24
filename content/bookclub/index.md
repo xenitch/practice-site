@@ -9,17 +9,16 @@ tariffs:
     url: https://yookassa.ru/my/i/aqIs8HTZv_dl/l
   - name: Адекватный — 1000 р.
     url: https://yookassa.ru/my/i/aqItA3nvi3zq/l
-  - name: Обсуждение + книга-сюрприз из специальной подборки — 2000 р.
-    url: https://yookassa.ru/my/i/aqItNj8fBzUO/l
-# Пауза оплаты: true — после регистрации показываем сообщение вместо перехода на ЮKassa
+# Пауза оплаты: true — после регистрации уводим на страницу /bookclub/thanks/ вместо ЮKassa
 payment_paused: true
+thanks_url: /bookclub/thanks/
 form_url: https://script.google.com/macros/s/AKfycbyJfEycIBCWvzOgOkeJ3n3C3w46v8cpOy-fE_Tz8NeHrBPEZBomnO0JM7IOFfBlCnMz/exec
 ---
 Обсуждаем книгу «Займись ничем» Джозефа Джебелли и составляем подборку книг для ничегонеделания.
 
 <dl class="events">
-<dt>28 сентября, 17:30 (кем)</dt>
-<dd>оффлайн, Кемерово, место уточняется</dd>
+<dt>28 сентября, 18:30–20:30 (кем)</dt>
+<dd>оффлайн, Кемерово, Лесная Поляна, б-р Осенний, 1</dd>
 </dl>
 
 Можно прийти, прочитав книгу не полностью и даже не открыв ни разу. Всё будет органично и уместно :)
