@@ -15,7 +15,7 @@ tariffs:
 # Пауза оплаты: true — после регистрации уводим на страницу /bookclub/thanks/ вместо ЮKassa
 payment_paused: true
 thanks_url: /bookclub/thanks/
-form_url: https://script.google.com/macros/s/AKfycbzlI-sE7Hq37kNaVRzIgV8mCmC0dSH15ROUOjbBTMXATeCqUoSUOmJKzT5g4mnW8hNl/exec
+form_url: https://script.google.com/macros/s/AKfycbzwO_Ddn01VcfTcso_10CMSo5BZY8mM9dk8CrQtga9E4YQhuniIUgCe8ijF4RWaAokN/exec
 # Прошедшие встречи — показываются под формой, новые добавлять в начало списка.
 # text — рефлексия по встрече (можно с HTML), необязательно.
 past:

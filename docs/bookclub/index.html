@@ -29,7 +29,7 @@
 </article>
 <section class="reg">
   <h2 class="kicker">Регистрация</h2>
-  <form class="reg-form" id="reg-form" method="post" action="https://script.google.com/macros/s/AKfycbzlI-sE7Hq37kNaVRzIgV8mCmC0dSH15ROUOjbBTMXATeCqUoSUOmJKzT5g4mnW8hNl/exec">
+  <form class="reg-form" id="reg-form" method="post" action="https://script.google.com/macros/s/AKfycbzwO_Ddn01VcfTcso_10CMSo5BZY8mM9dk8CrQtga9E4YQhuniIUgCe8ijF4RWaAokN/exec">
     <label>Имя <input type="text" name="name" required autocomplete="name"></label>
     <label>Номер телефона <input type="tel" name="phone" required autocomplete="tel"></label>
     <label>Эл. почта <input type="email" name="email" required autocomplete="email"></label>
@@ -71,7 +71,7 @@
   var payLink = document.getElementById('reg-pay-link');
   var paused = true;
   var thanksUrl = "/bookclub/thanks/";
-  var formUrl = "https://script.google.com/macros/s/AKfycbzlI-sE7Hq37kNaVRzIgV8mCmC0dSH15ROUOjbBTMXATeCqUoSUOmJKzT5g4mnW8hNl/exec";
+  var formUrl = "https://script.google.com/macros/s/AKfycbzwO_Ddn01VcfTcso_10CMSo5BZY8mM9dk8CrQtga9E4YQhuniIUgCe8ijF4RWaAokN/exec";
   var buttonText = paused ? 'Зарегистрироваться' : 'Перейти к оплате';
   function finish(payUrl) {
     location.href = (paused || !payUrl) ? thanksUrl : payUrl;
