@@ -11,10 +11,11 @@ tariffs:
   - name: Адекватный — 1000 р.   # так пишется в таблицу и проверяется скриптом
     label: Приятный — 1000 р.     # так видит человек на странице
     url: https://yookassa.ru/my/i/aqItA3nvi3zq/l
-  - name: Я участник «Органических медиа» — 0 р.   # без url: после регистрации всегда страница «Спасибо»
+  - name: Я участник «Органических медиа» — 0 р.
+    thanks_url: /bookclub/welcome/   # своя страница «Спасибо», без слов про оплату
 # Пауза оплаты: true — после регистрации уводим на страницу /bookclub/thanks/ вместо ЮKassa
 payment_paused: true
-thanks_url: /bookclub/thanks/
+thanks_url: /bookclub/thanks/   # общая страница «Спасибо» (про ссылку на оплату)
 form_url: https://script.google.com/macros/s/AKfycbzwO_Ddn01VcfTcso_10CMSo5BZY8mM9dk8CrQtga9E4YQhuniIUgCe8ijF4RWaAokN/exec
 # Прошедшие встречи — показываются под формой, новые добавлять в начало списка.
 # text — рефлексия по встрече (можно с HTML), необязательно.

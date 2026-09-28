@@ -108,6 +108,9 @@ def test_bookclub_page_has_form():
     assert 'var thanksUrl = "/bookclub/thanks/"' in html
     thanks = (root / "docs" / "bookclub" / "thanks" / "index.html").read_text(encoding="utf-8")
     assert "организатор пришлёт в телеграм" in thanks and "check-mark" in thanks
+    assert 'data-thanks="/bookclub/welcome/"' in html
+    welcome = (root / "docs" / "bookclub" / "welcome" / "index.html").read_text(encoding="utf-8")
+    assert "И до встречи! :)" in welcome and "оплат" not in welcome
     assert 'name="consent"' in html and 'href="/consent/"' in html
     assert html.index('name="consent"') < html.index("<button")
     assert "Zoom" not in html and 'name="format"' not in html

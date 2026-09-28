@@ -37,11 +37,11 @@
     <fieldset>
       <legend>Тариф</legend>
       
-      <label class="radio"><input type="radio" name="tariff" value="Символический — 500 р." data-pay="https://yookassa.ru/my/i/aqIs8HTZv_dl/l" required> Символический — 500 р.</label>
+      <label class="radio"><input type="radio" name="tariff" value="Символический — 500 р." data-pay="https://yookassa.ru/my/i/aqIs8HTZv_dl/l" data-thanks="" required> Символический — 500 р.</label>
       
-      <label class="radio"><input type="radio" name="tariff" value="Адекватный — 1000 р." data-pay="https://yookassa.ru/my/i/aqItA3nvi3zq/l" required> Приятный — 1000 р.</label>
+      <label class="radio"><input type="radio" name="tariff" value="Адекватный — 1000 р." data-pay="https://yookassa.ru/my/i/aqItA3nvi3zq/l" data-thanks="" required> Приятный — 1000 р.</label>
       
-      <label class="radio"><input type="radio" name="tariff" value="Я участник «Органических медиа» — 0 р." data-pay="" required> Я участник «Органических медиа» — 0 р.</label>
+      <label class="radio"><input type="radio" name="tariff" value="Я участник «Органических медиа» — 0 р." data-pay="" data-thanks="/bookclub/welcome/" required> Я участник «Органических медиа» — 0 р.</label>
       
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
@@ -73,26 +73,27 @@
   var thanksUrl = "/bookclub/thanks/";
   var formUrl = "https://script.google.com/macros/s/AKfycbzwO_Ddn01VcfTcso_10CMSo5BZY8mM9dk8CrQtga9E4YQhuniIUgCe8ijF4RWaAokN/exec";
   var buttonText = paused ? 'Зарегистрироваться' : 'Перейти к оплате';
-  function finish(payUrl) {
-    location.href = (paused || !payUrl) ? thanksUrl : payUrl;
+  function finish(payUrl, ownThanks) {
+    location.href = (paused || !payUrl) ? (ownThanks || thanksUrl) : payUrl;
   }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var button = form.querySelector('button');
     var chosen = form.querySelector('input[name="tariff"]:checked');
     var payUrl = chosen ? chosen.getAttribute('data-pay') : '';
+    var ownThanks = chosen ? chosen.getAttribute('data-thanks') : '';
     if (payLink) payLink.href = payUrl;
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     error.hidden = true;
     button.disabled = true;
     button.textContent = 'Отправляем…';
-    if (!formUrl) { finish(payUrl); return; }
+    if (!formUrl) { finish(payUrl, ownThanks); return; }
     fetch(formUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(data) })
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (!res.ok) throw new Error(res.error || 'error');
-        finish(payUrl);
+        finish(payUrl, ownThanks);
       })
       .catch(function () {
         error.hidden = false;
