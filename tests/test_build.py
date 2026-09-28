@@ -97,12 +97,13 @@ def test_bookclub_page_has_form():
     build(root)
     html = (root / "docs" / "bookclub" / "index.html").read_text(encoding="utf-8")
     assert "<form" in html and 'name="email"' in html and 'name="telegram"' in html
-    assert "Ничегонеделание для занятых организмов" in html
+    assert "Куда течёт река сознания?" in html and "Река сознания" in html
     assert html.count('type="radio" name="tariff"') == 2 and "2000" not in html
-    assert "18:30–20:30" in html and "Осенний, 1" in html
+    assert "28 октября, 18:30–20:30" in html and "Осенний, 1" in html
     assert 'value="Адекватный — 1000 р."' in html and "> Приятный — 1000 р.<" in html
     assert "> Адекватный" not in html  # старое название только в value
-    assert "bookclub-cover.jpg" in html
+    assert "Прошедшие встречи клуба" in html and "bookclub-cover.jpg" in html
+    assert html.index("<button") < html.index("Прошедшие встречи клуба")
     assert "Зарегистрироваться</button>" in html  # оплата на паузе
     assert 'var thanksUrl = "/bookclub/thanks/"' in html
     thanks = (root / "docs" / "bookclub" / "thanks" / "index.html").read_text(encoding="utf-8")

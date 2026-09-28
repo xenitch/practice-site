@@ -4,7 +4,7 @@
   {% if page.meta.cover %}<img class="cover" src="{{ page.meta.cover | e }}" alt="{{ page.meta.cover_alt | e }}">{% endif %}
   <header class="article-header">
     <p class="kicker">Органический книжный клуб</p>
-    <h1>Ничегонеделание для занятых организмов</h1>
+    <h1>{{ page.meta.heading | e }}</h1>
   </header>
   {{ page.content }}
 </article>
@@ -27,6 +27,20 @@
     <p class="form-error" id="reg-error" hidden>Не удалось записать заявку. Напишите <a href="{{ site.telegram }}">@xenitch</a>{% if not page.meta.payment_paused %} или <a id="reg-pay-link" href="{{ page.meta.tariffs[0].url | e }}">перейдите к оплате</a>{% endif %}.</p>
   </form>
 </section>
+{% if page.meta.past %}
+<hr>
+<section class="past">
+  <h2 class="kicker">Прошедшие встречи клуба</h2>
+  {% for m in page.meta.past %}
+  <article class="past-meeting">
+    {% if m.image %}<img src="{{ m.image | e }}" alt="{{ m.alt | e }}">{% endif %}
+    <h3>{{ m.title | e }}</h3>
+    <p class="meeting-date">{{ m.date | e }}</p>
+    {% if m.text %}<div class="prose">{{ m.text }}</div>{% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
 <script>
 (function () {
   var form = document.getElementById('reg-form');
