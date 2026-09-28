@@ -102,7 +102,7 @@ def test_bookclub_page_has_form():
     assert "28 октября, 18:30–20:30" in html and "Осенний, 1" in html
     assert 'value="Адекватный — 1000 р."' in html and "> Приятный — 1000 р.<" in html
     assert "> Адекватный" not in html  # старое название только в value
-    assert "Прошедшие встречи клуба" in html and "bookclub-cover.jpg" in html
+    assert "Прошедшие встречи клуба" in html and "bookclub-cover.jpg" in html and "bookclub-cover-sacks.jpg" in html
     assert html.index("<button") < html.index("Прошедшие встречи клуба")
     assert "Зарегистрироваться</button>" in html  # оплата на паузе
     assert 'var thanksUrl = "/bookclub/thanks/"' in html
