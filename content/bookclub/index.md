@@ -11,6 +11,7 @@ tariffs:
   - name: Адекватный — 1000 р.   # так пишется в таблицу и проверяется скриптом
     label: Приятный — 1000 р.     # так видит человек на странице
     url: https://yookassa.ru/my/i/aqItA3nvi3zq/l
+  - name: Я участник «Органических медиа» — 0 р.   # без url: после регистрации всегда страница «Спасибо»
 # Пауза оплаты: true — после регистрации уводим на страницу /bookclub/thanks/ вместо ЮKassa
 payment_paused: true
 thanks_url: /bookclub/thanks/

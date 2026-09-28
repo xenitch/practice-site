@@ -41,6 +41,8 @@
       
       <label class="radio"><input type="radio" name="tariff" value="Адекватный — 1000 р." data-pay="https://yookassa.ru/my/i/aqItA3nvi3zq/l" required> Приятный — 1000 р.</label>
       
+      <label class="radio"><input type="radio" name="tariff" value="Я участник «Органических медиа» — 0 р." data-pay="" required> Я участник «Органических медиа» — 0 р.</label>
+      
     </fieldset>
     <label class="trap" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     <label class="check"><input type="checkbox" name="consent" required> Кстати, даю <a href="/consent/">согласие на обработку персональных данных</a></label>
@@ -72,7 +74,7 @@
   var formUrl = "https://script.google.com/macros/s/AKfycbzlI-sE7Hq37kNaVRzIgV8mCmC0dSH15ROUOjbBTMXATeCqUoSUOmJKzT5g4mnW8hNl/exec";
   var buttonText = paused ? 'Зарегистрироваться' : 'Перейти к оплате';
   function finish(payUrl) {
-    location.href = paused ? thanksUrl : payUrl;
+    location.href = (paused || !payUrl) ? thanksUrl : payUrl;
   }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
