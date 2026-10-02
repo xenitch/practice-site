@@ -4,7 +4,7 @@ heading: Куда течёт река сознания?
 description: Обсуждаем книгу «Река сознания» Оливера Сакса. 28 октября, Кемерово, Лесная Поляна.
 template: bookclub.html
 cover: /static/images/bookclub-cover-sacks.jpg
-cover_alt: Обложка книги «Река сознания» Оливера Сакса
+cover_alt: Книга «Река сознания» Оливера Сакса в ветвях осеннего куста
 tariffs:
   - name: Символический — 500 р.
     url: https://yookassa.ru/my/i/aqIs8HTZv_dl/l
